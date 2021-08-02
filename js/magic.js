@@ -16,17 +16,25 @@ mainTitle.style.color = "white";
 mainTitle.style.letterSpacing = "5px";
 mainTitle.style.textAlign = "center";
 
-// Adding inputs
-const questionInput = document.createElement("input");
-document.body.appendChild(questionInput);
+// Creating form for inputs
+const magicForm = document.createElement('form');
+document.body.appendChild(magicForm);
+
+// adding parent div
+const parentDiv = document.createElement("div");
+document.body.appendChild(parentDiv);
+
+// Adding input
+let questionInput = document.createElement("input");
+parentDiv.appendChild(questionInput);
 questionInput.placeholder = "Enter a question";
 
 questionInput.style.padding = "0.5rem";
 questionInput.style.borderRadius = "0.5rem";
 
 // Adding button to run function
-const askButton = document.createElement("button");
-document.body.appendChild(askButton);
+let askButton = document.createElement("button");
+parentDiv.appendChild(askButton);
 askButton.innerHTML = "Ask Me!";
 
 askButton.style.cursor = "pointer";
@@ -36,14 +44,19 @@ askButton.style.textDecoration = "none";
 askButton.style.padding = "0.5rem";
 askButton.style.marginLeft = "0.5rem";
 
+let magicAnswers = ["test 1", "test 2", "test 3", "test 4", "test 5", "test 6"];
+
+const askFunction = function ask() {
+  showAnswer.innerText =
+    magicAnswers[Math.floor(Math.random() * magicAnswers.length)];
+};
+
+askButton.addEventListener("click", askFunction);
+
 // Adding refresh button
-const refreshButton = document.createElement("button");
+let refreshButton = document.createElement("button");
 document.body.appendChild(refreshButton);
 refreshButton.innerHTML = "Refresh";
-
-refreshButton.addEventListener("click", function () {
-  refreshQuestion();
-});
 
 refreshButton.style.cursor = "pointer";
 refreshButton.style.backgroundColor = "#A95E56";
@@ -55,4 +68,27 @@ refreshButton.style.marginLeft = "0.5rem";
 function refreshQuestion() {
   const value = questionInput.value;
   questionInput.value = "";
+}
+
+refreshButton.addEventListener("click", refreshQuestion);
+
+// div for showing the answers
+const showAnswer = document.createElement("div");
+document.body.appendChild(showAnswer);
+showAnswer.setAttribute("id", "showMagicAnswer");
+
+showAnswer.style.marginTop = "2rem";
+showAnswer.style.textAlign = "center";
+showAnswer.style.fontSize = "2rem";
+showAnswer.style.letterSpacing = "0.1rem";
+showAnswer.style.color = "white";
+
+function toggleFormUserInfo() {
+  if (parent.style.display === "none") {
+    parentDiv.style.display = "block";
+    userInfoElement.style.display = "none";
+  } else {
+    parentDiv.style.display = "none";
+    userInfoElement.style.display = "block";
+  }
 }
