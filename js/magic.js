@@ -17,7 +17,7 @@ mainTitle.style.letterSpacing = "5px";
 mainTitle.style.textAlign = "center";
 
 // Creating form for inputs
-const magicForm = document.createElement('form');
+const magicForm = document.createElement("form");
 document.body.appendChild(magicForm);
 
 // adding parent div
@@ -47,8 +47,13 @@ askButton.style.marginLeft = "0.5rem";
 let magicAnswers = ["test 1", "test 2", "test 3", "test 4", "test 5", "test 6"];
 
 const askFunction = function ask() {
-  showAnswer.innerText =
-    magicAnswers[Math.floor(Math.random() * magicAnswers.length)];
+  if (questionInput.value === "") {
+    alert("Please enter a question");
+  } else {
+    showAnswer.innerText =
+      magicAnswers[Math.floor(Math.random() * magicAnswers.length)];
+    toggle();
+  }
 };
 
 askButton.addEventListener("click", askFunction);
@@ -64,10 +69,12 @@ refreshButton.style.borderRadius = "0.5rem";
 refreshButton.style.textDecoration = "none";
 refreshButton.style.padding = "0.5rem";
 refreshButton.style.marginLeft = "0.5rem";
+refreshButton.style.display = "none";
 
 function refreshQuestion() {
   const value = questionInput.value;
   questionInput.value = "";
+  toggle();
 }
 
 refreshButton.addEventListener("click", refreshQuestion);
@@ -83,12 +90,14 @@ showAnswer.style.fontSize = "2rem";
 showAnswer.style.letterSpacing = "0.1rem";
 showAnswer.style.color = "white";
 
-function toggleFormUserInfo() {
-  if (parent.style.display === "none") {
+function toggle() {
+  if (parentDiv.style.display === "none") {
     parentDiv.style.display = "block";
-    userInfoElement.style.display = "none";
+    showAnswer.style.display = "none";
+    refreshButton.style.display = "none";
   } else {
     parentDiv.style.display = "none";
-    userInfoElement.style.display = "block";
+    showAnswer.style.display = "block";
+    refreshButton.style.display = "block";
   }
 }
