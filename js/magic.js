@@ -44,7 +44,26 @@ askButton.style.textDecoration = "none";
 askButton.style.padding = "0.5rem";
 askButton.style.marginLeft = "0.5rem";
 
-let magicAnswers = ["test 1", "test 2", "test 3", "test 4", "test 5", "test 6"];
+let magicAnswers = [
+  "It is certain 👍🏻",
+  "It is decidedly so",
+  "Without a doubt ☺️",
+  "Yes, definitely ☺️",
+  "You may rely on it 👍🏻",
+  "As I see it, yes! 🙌🏻",
+  "Most likely",
+  "Yes! 🙌🏻",
+  "Signs point to yes!",
+  "Reply hazy, please try again 😶‍🌫️",
+  "Ask again later",
+  "Better not tell you now 🤫",
+  "Cannot predict now 🤕",
+  "Concentrate and ask again",
+  "My reply is no ☠️",
+  "My sources say no 👎🏻",
+  "Outlook does not look too good",
+  "Very doubtful",
+];
 
 const askFunction = function ask() {
   if (questionInput.value === "") {
