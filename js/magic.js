@@ -9,12 +9,13 @@ const bgColor = (document.body.style.backgroundColor = "#677E98");
 // H1 Text
 const mainTitle = document.createElement("h1");
 document.body.appendChild(mainTitle);
-mainTitle.innerHTML = "Welcome to Magic 8 Ball!";
+mainTitle.innerHTML = "DETERMINE YOUR FUTURE!";
 
 mainTitle.style.fontSize = "3.5rem";
 mainTitle.style.color = "white";
 mainTitle.style.letterSpacing = "5px";
 mainTitle.style.textAlign = "center";
+mainTitle.style.fontFamily = "Creepster";
 
 // Creating form for inputs
 const magicForm = document.createElement("form");
@@ -23,6 +24,9 @@ document.body.appendChild(magicForm);
 // adding parent div
 const parentDiv = document.createElement("div");
 document.body.appendChild(parentDiv);
+
+parentDiv.style.textAlign = "center";
+parentDiv.style.marginTop = "4rem";
 
 // Adding input
 let questionInput = document.createElement("input");
@@ -43,6 +47,7 @@ askButton.style.borderRadius = "0.5rem";
 askButton.style.textDecoration = "none";
 askButton.style.padding = "0.5rem";
 askButton.style.marginLeft = "0.5rem";
+askButton.style.fontFamily = 'Creepster';
 
 let magicAnswers = [
   "It is certain 👍🏻",
@@ -89,6 +94,8 @@ refreshButton.style.textDecoration = "none";
 refreshButton.style.padding = "0.5rem";
 refreshButton.style.marginLeft = "0.5rem";
 refreshButton.style.display = "none";
+refreshButton.style.color = "white";
+refreshButton.style.fontFamily = 'Creepster';
 
 function refreshQuestion() {
   const value = questionInput.value;
@@ -108,6 +115,7 @@ showAnswer.style.textAlign = "center";
 showAnswer.style.fontSize = "2rem";
 showAnswer.style.letterSpacing = "0.1rem";
 showAnswer.style.color = "white";
+showAnswer.style.fontFamily = "Creepster";
 
 function toggle() {
   if (parentDiv.style.display === "none") {
