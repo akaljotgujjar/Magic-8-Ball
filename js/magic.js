@@ -42,12 +42,12 @@ parentDiv.appendChild(askButton);
 askButton.innerHTML = "Ask Me!";
 
 askButton.style.cursor = "pointer";
-askButton.style.backgroundColor = "#609F64";
 askButton.style.borderRadius = "0.5rem";
 askButton.style.textDecoration = "none";
 askButton.style.padding = "0.5rem";
 askButton.style.marginLeft = "0.5rem";
 askButton.style.fontFamily = 'Creepster';
+askButton.style.backgroundColor = 'btn btn-danger';
 
 let magicAnswers = [
   "It is certain 👍🏻",
