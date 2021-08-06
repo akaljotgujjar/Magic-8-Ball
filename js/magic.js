@@ -46,8 +46,8 @@ askButton.style.borderRadius = "0.5rem";
 askButton.style.textDecoration = "none";
 askButton.style.padding = "0.5rem";
 askButton.style.marginLeft = "0.5rem";
-askButton.style.fontFamily = 'Creepster';
-askButton.style.backgroundColor = 'btn btn-danger';
+askButton.style.fontFamily = "Creepster";
+askButton.style.backgroundColor = "btn btn-danger";
 
 let magicAnswers = [
   "It is certain 👍🏻",
@@ -69,6 +69,27 @@ let magicAnswers = [
   "Outlook does not look too good",
   "Very doubtful",
 ];
+
+// let magicAnswers = [
+//   "../assests/magic8ball_1.png",
+//   "../assests/magic8ball_10.png",
+//   "../assests/magic8ball_11.png",
+//   "../assests/magic8ball_12.png",
+//   "../assests/magic8ball_13.png",
+//   "../assests/magic8ball_14.png",
+//   "../assests/magic8ball_15.png",
+//   "../assests/magic8ball_17.png",
+//   "../assests/magic8ball_18.png",
+//   "../assests/magic8ball_19.png",
+//   "../assests/magic8ball_2.png",
+//   "../assests/magic8ball_20.png",
+//   "../assests/magic8ball_3.png",
+//   "../assests/magic8ball_4.png",
+//   "../assests/magic8ball_5.png",
+//   "../assests/magic8ball_6.png",
+//   "../assests/magic8ball_7.png",
+//   "../assests/magic8ball_9.png",
+// ];
 
 const askFunction = function ask() {
   if (questionInput.value === "") {
@@ -95,7 +116,7 @@ refreshButton.style.padding = "0.5rem";
 refreshButton.style.marginLeft = "0.5rem";
 refreshButton.style.display = "none";
 refreshButton.style.color = "white";
-refreshButton.style.fontFamily = 'Creepster';
+refreshButton.style.fontFamily = "Creepster";
 
 function refreshQuestion() {
   const value = questionInput.value;
